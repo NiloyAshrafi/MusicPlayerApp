@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setElevation(0);
         imageView=findViewById(R.id.mini_player_play_pause_button);
         miniplayer=findViewById(R.id.mini_player);
-        imageView.setBackgroundResource(R.drawable.play_arrow_24dp);
+        imageView.setBackgroundResource(R.drawable.play_arrow_24);
        intializeMini();
         notificationManager = NotificationManagerCompat.from(this);
 
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                 if(PlayerActivity.playin==true){
                     imageView.setBackgroundResource(R.drawable.pause_24dp);
                 }else{
-                    imageView.setBackgroundResource(R.drawable.play_arrow_24dp);
+                    imageView.setBackgroundResource(R.drawable.play_arrow_24);
 
                 }
             }
@@ -229,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
         if(PlayerActivity.playin){
             plaorpa=R.drawable.pause_24dp;
         }else{
-            plaorpa=R.drawable.play_arrow_24dp;
+            plaorpa=R.drawable.play_arrow_24;
         }
         metadataRetriever = new MediaMetadataRetriever();
         metadataRetriever.setDataSource(songs.get(position).getPath());

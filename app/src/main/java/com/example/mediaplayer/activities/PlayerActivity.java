@@ -42,8 +42,9 @@ public class PlayerActivity extends AppCompatActivity {
     private static SeekBar mSeekBar;
     private static PlayerActivity instance;
     int position;
-    private static TextView curTime,totTime;
-            private TextView songTitle,artistname;
+    private static TextView curTime;
+    private static TextView totTime;
+    private static TextView songTitle;
     private static ImageView pause,prev,next;
     private ImageView imageView;
     protected int val;
@@ -72,7 +73,6 @@ public class PlayerActivity extends AppCompatActivity {
             nofiticationCenter = new NofiticationCenter();
             mSeekBar = findViewById(R.id.seek);
             songTitle = findViewById(R.id.song_name);
-            artistname = findViewById(R.id.artist_name);
             totTime = findViewById(R.id.total_time);
             pause = findViewById(R.id.pause);
             linearLayout = findViewById(R.id.linear_layout);
@@ -88,7 +88,6 @@ public class PlayerActivity extends AppCompatActivity {
             place = bundle.getBoolean("from");
         if(instance!=null&&place==false){
             songTitle.setText(instance.songTitle.getText());
-            artistname.setText(instance.artistname.getText());
             totTime.setText(instance.totTime.getText());
             curTime.setText(instance.curTime.getText());
             imageView.setImageDrawable(instance.imageView.getDrawable());
@@ -127,9 +126,7 @@ public class PlayerActivity extends AppCompatActivity {
     public void setData(int position){
 
         String name= Asongs.get(position).getName();
-        String artist= Asongs.get(position).getArtist();
         songTitle.setText(name);
-        artistname.setText(artist);
         MainActivity.getInstance().textView.setText(name);
         try {
 
@@ -303,9 +300,9 @@ public class PlayerActivity extends AppCompatActivity {
         if (mMediaPlayer.isPlaying()) {
             playin=false;
             mMediaPlayer.pause();
-            pause.setBackgroundResource(R.drawable.play_arrow_24dp);
+            pause.setBackgroundResource(R.drawable.play_arrow_24);
             MainActivity.getInstance().sendOnChannel( Asongs.get(position).getName(), Asongs.get(position).getArtist(),position);
-            MainActivity.imageView.setBackgroundResource(R.drawable.play_arrow_24dp);
+            MainActivity.imageView.setBackgroundResource(R.drawable.play_arrow_24);
         }
 
     }
