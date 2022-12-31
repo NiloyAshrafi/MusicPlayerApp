@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="Gramophone-MusicPlayer.app" target="11" />
+      <module name="Music_Player.app" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
